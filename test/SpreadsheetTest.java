@@ -18,25 +18,25 @@ public class SpreadsheetTest {
 
     private Spreadsheet spreadsheet = new Spreadsheet();
 
-	@Test
-	public void shouldConvert0toA() {
-		assertEquals("A", spreadsheet.indexToColumn(0));
-	}
+    @Test
+    public void shouldConvert0toA() {
+        assertEquals("A", spreadsheet.indexToColumn(0));
+    }
 
-	@Test
-	public void shouldConvert1toB() {
-		assertEquals("B", spreadsheet.indexToColumn(1));
-	}
+    @Test
+    public void shouldConvert1toB() {
+        assertEquals("B", spreadsheet.indexToColumn(1));
+    }
 
-	@Test
-	public void shouldConvert2toC() {
-		assertEquals("C", spreadsheet.indexToColumn(2));
-	}
+    @Test
+    public void shouldConvert2toC() {
+        assertEquals("C", spreadsheet.indexToColumn(2));
+    }
 
-	@Test
-	public void shouldConvert25toZ() {
-		assertEquals("Z", spreadsheet.indexToColumn(25));
-	}
+    @Test
+    public void shouldConvert25toZ() {
+        assertEquals("Z", spreadsheet.indexToColumn(25));
+    }
 
     @Test
     public void shouldConvert26toAA() {
@@ -57,4 +57,10 @@ public class SpreadsheetTest {
     public void shouldConvert52toBA() {
         assertEquals("BA", spreadsheet.indexToColumn(52));
     }
+
+    @Test
+    public void shouldConvert776toAAW() {
+        assertEquals("AAW", spreadsheet.indexToColumn(776));
+    }
+
 }

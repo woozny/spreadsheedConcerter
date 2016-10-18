@@ -8,27 +8,22 @@ public class Spreadsheet {
     }
 
     private String numberToColumnConverter(int number) {
-        if (number < SCOPE) {
-            return convertNumberToString(number);
-        } else {
-            String fullColumn = "";
+        String fullColumn = "";
+        if (number >= SCOPE) {
+
             int rota = number / SCOPE;
             int modulo = number % SCOPE;
 
-            fullColumn = convertNumberToString(rota -1);
+            fullColumn += convertNumberToString(rota - 1);
             fullColumn += convertNumberToString(modulo);
-            return fullColumn;
+        } else {
+            fullColumn += convertNumberToString(number);
         }
+        return fullColumn;
     }
 
     private String convertNumberToString(int i) {
-        if (isInSupportedScope(i)) {
-            return String.valueOf((char) (CHARACTER_A + i));
-        }
-        throw new IllegalArgumentException(i + " is out of supported scope");
+        return String.valueOf((char) (CHARACTER_A + i));
     }
 
-    private boolean isInSupportedScope(int i) {
-        return i >= 0 && i <= SCOPE;
-    }
 }
