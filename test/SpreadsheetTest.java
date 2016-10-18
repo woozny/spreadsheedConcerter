@@ -29,7 +29,22 @@ public class SpreadsheetTest {
 	}
 
 	@Test
+	public void shouldConvert2toC() {
+		assertEquals("C", spreadsheet.indexToColumn(2));
+	}
+
+	@Test
 	public void shouldConvert25toZ() {
 		assertEquals("Z", spreadsheet.indexToColumn(25));
 	}
+
+    @Test
+    public void shouldConvert26toAA() {
+        assertEquals("AA", spreadsheet.indexToColumn(26));
+    }
+
+    @Test
+    public void shouldConvert28toAC() {
+        assertEquals("AC", spreadsheet.indexToColumn(28));
+    }
 }
