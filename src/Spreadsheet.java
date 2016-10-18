@@ -4,20 +4,27 @@ public class Spreadsheet {
     public static final int SCOPE = 25;
 
     public String indexToColumn(int number) {
-        return getCharFromNumber(number);
+        return numberToColumnConverter(number);
     }
 
-    private String getCharFromNumber(int number) {
+    private String numberToColumnConverter(int number) {
         if(number <= SCOPE) {
-            return String.valueOf((char) (CHARACTER_A + number));
+            return convertNumberToString(number);
         } else {
-            String fullColumn = "";
+            String fullColumn;
             int rota = number/SCOPE;
             int modulo = number % SCOPE;
 
-            fullColumn = String.valueOf((char) (CHARACTER_A + rota -1));
-            fullColumn += String.valueOf((char) (CHARACTER_A + modulo -1));
+            fullColumn = convertNumberToString(rota -1);
+            fullColumn += convertNumberToString(modulo -1);
             return fullColumn;
         }
+    }
+
+    private String convertNumberToString(int i) {
+        if (i >= 0 && i<= SCOPE) {
+            return String.valueOf((char) (CHARACTER_A + i));
+        }
+        throw new IllegalArgumentException(i + " is out of supported scope");
     }
 }
