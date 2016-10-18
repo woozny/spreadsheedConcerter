@@ -26,4 +26,8 @@ public class Spreadsheet {
         return String.valueOf((char) (CHARACTER_A + i));
     }
 
+    public int columnToIndex(String column) {
+        char number = column.charAt(0);
+        return number - CHARACTER_A;
+    }
 }
