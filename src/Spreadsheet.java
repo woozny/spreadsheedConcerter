@@ -22,9 +22,13 @@ public class Spreadsheet {
     }
 
     private String convertNumberToString(int i) {
-        if (i >= 0 && i<= SCOPE) {
+        if (isInSupportedScope(i)) {
             return String.valueOf((char) (CHARACTER_A + i));
         }
         throw new IllegalArgumentException(i + " is out of supported scope");
+    }
+
+    private boolean isInSupportedScope(int i) {
+        return i >= 0 && i<= SCOPE;
     }
 }
