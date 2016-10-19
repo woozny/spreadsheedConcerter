@@ -26,7 +26,7 @@ public class Spreadsheet {
         int counter = convertNumberToChar(0, column);
 
         for (int index = 1; index < column.length(); index++) {
-            counter = (counter + 1) * 26;
+            counter = (counter + 1) * SCOPE;
             counter += convertNumberToChar(index, column);
         }
         return counter;
