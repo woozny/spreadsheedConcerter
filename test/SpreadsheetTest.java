@@ -59,6 +59,16 @@ public class SpreadsheetTest {
     }
 
     @Test
+    public void shouldConvert701toZZ() {
+        assertEquals("ZZ", spreadsheet.indexToColumn(701));
+    }
+
+    @Test
+    public void shouldConvert702toAAA() {
+        assertEquals("AAA", spreadsheet.indexToColumn(702));
+    }
+
+    @Test
     public void shouldConvertAto0() {
         assertEquals(0, spreadsheet.columnToIndex("A"));
     }

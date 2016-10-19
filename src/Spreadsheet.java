@@ -8,22 +8,18 @@ public class Spreadsheet {
     }
 
     private String numberToColumnConverter(int number) {
-        String fullColumn = "";
-        if (number >= SCOPE) {
+        StringBuilder fullColumn = new StringBuilder();
 
-            int rota = number / SCOPE;
-            int modulo = number % SCOPE;
+            do {
+                fullColumn.append(convertNumberToString(number));
+                number = number / SCOPE - 1;
+            } while (number >= 0);
 
-            fullColumn += convertNumberToString(rota - 1);
-            fullColumn += convertNumberToString(modulo);
-        } else {
-            fullColumn += convertNumberToString(number);
-        }
-        return fullColumn;
+        return fullColumn.reverse().toString();
     }
 
     private String convertNumberToString(int i) {
-        return String.valueOf((char) (CHARACTER_A + i));
+        return String.valueOf((char) (i % SCOPE + CHARACTER_A));
     }
 
     public int columnToIndex(String column) {
