@@ -24,16 +24,11 @@ public class Spreadsheet {
 
     public int columnToIndex(String column) {
         int counter = convertNumberToChar(0, column);
-        int index = 1;
 
-        while (column.length() > index) {
-            counter = (counter  + 1) * 26;
+        for (int index = 1; index < column.length(); index++) {
+            counter = (counter + 1) * 26;
             counter += convertNumberToChar(index, column);
-            index++;
         }
-
-
-
         return counter;
     }
 
