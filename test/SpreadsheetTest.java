@@ -98,4 +98,9 @@ public class SpreadsheetTest {
         assertEquals(52, spreadsheet.columnToIndex("BA"));
     }
 
+    @Test
+    public void shouldConvertAAAto702() {
+        assertEquals(702, spreadsheet.columnToIndex("AAA"));
+    }
+
 }
