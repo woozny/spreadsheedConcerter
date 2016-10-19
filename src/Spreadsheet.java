@@ -10,10 +10,10 @@ public class Spreadsheet {
     private String numberToColumnConverter(int number) {
         StringBuilder fullColumn = new StringBuilder();
 
-            do {
-                fullColumn.append(convertNumberToString(number));
-                number = number / SCOPE - 1;
-            } while (number >= 0);
+        do {
+            fullColumn.append(convertNumberToString(number));
+            number = number / SCOPE - 1;
+        } while (number >= 0);
 
         return fullColumn.reverse().toString();
     }
@@ -23,7 +23,16 @@ public class Spreadsheet {
     }
 
     public int columnToIndex(String column) {
-        char number = column.charAt(0);
-        return number - CHARACTER_A;
+        int counter = convertNumberToChar(0, column);
+        if (column.length() > 1) {
+            counter = (counter  + 1) * 26;
+            counter += convertNumberToChar(1, column);
+        }
+
+        return counter;
+    }
+
+    private int convertNumberToChar(int index, String column) {
+        return column.charAt(index) - CHARACTER_A;
     }
 }

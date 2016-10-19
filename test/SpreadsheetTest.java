@@ -83,4 +83,19 @@ public class SpreadsheetTest {
         assertEquals(25, spreadsheet.columnToIndex("Z"));
     }
 
+    @Test
+    public void shouldConvertAAto26() {
+        assertEquals(26, spreadsheet.columnToIndex("AA"));
+    }
+
+    @Test
+    public void shouldConvertACto28() {
+        assertEquals(28, spreadsheet.columnToIndex("AC"));
+    }
+
+    @Test
+    public void shouldConvertBAto52() {
+        assertEquals(52, spreadsheet.columnToIndex("BA"));
+    }
+
 }
